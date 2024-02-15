@@ -6,7 +6,7 @@ const Player = () => {
 
   useEffect(() => {
     const handleKeyPress = (event) => {
-      const speed = 5;
+      const speed = 10;
       switch (event.key) {
         case 'ArrowUp':
           setPosition((prevPos) => ({ ...prevPos, y: prevPos.y - speed }));

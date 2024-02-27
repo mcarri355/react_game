@@ -1,22 +1,37 @@
-// Game.jsx
-import React from 'react';
-import Player from './Player';
+import React, { useEffect } from 'react';
+import Phaser from 'phaser';
 
-const Game = () => {
-  const handleKeyPress = (event) => {
-    // Handle player movement here
-    // For example, update player's position based on keypress
-  };
+const PlatformerGame = () => {
+  class Example extends Phaser.Scene{
+    constructor(){
 
-  return (
-    <div
-      tabIndex="0"
-      onKeyDown={handleKeyPress}
-      style={{ width: '100vw', height: '100vh', background: 'lightblue', position: 'relative' }}
-    >
-      <Player />
-    </div>
-  );
+    }
+    preload(){
+
+    }
+    create(){
+
+    }
+    update(){
+      
+    }
+  }
+
+  const config = {
+    type: Phaser.AUTO,
+    width: 800,
+    height: 800,
+    parent: "game-container",
+    physics: {
+      default: 'arcade',
+      arcade: {debug: true}
+    },
+    scene: Example
+  }
+  useEffect(() => {
+    new Phaser.Game(config);
+  })
+  return <div id="game-container" />;
 };
 
-export default Game;
+export default PlatformerGame;
